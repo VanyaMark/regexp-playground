@@ -9,15 +9,15 @@
 
 function extractHexColors(s) {
     /** Modifica solamente el cuerpo de la función */
-    const regexp = /([#][0-9a-f{6}|[#][0-9a-f]{3})/gi;
+    const regexp = /(#[0-9a-f]{6}|#[0-9a-f]{3})/gi;
     let hexColor = s.match(regexp);
     let result;
-    if (hexColor == null) {
+    if (!hexColor) {
         result = [];
     } else {
-        result = hexColor[0];
+        result = hexColor;
     }
-    return hexColor;
+    return result;
 }
 
 // Juegos de pruebas
